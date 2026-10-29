@@ -4,78 +4,88 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fernando Paulino</title>
-  <meta name="description" content="Fernando Junior Paulino Bido, estudiante de Ingeniería de Software en UTECO, Cotuí.">
+  <meta name="description" content="Currículum de Fernando Junior Paulino Bido, estudiante de Ingeniería de Software en UTECO, Cotuí.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
   <style>
-    :root { --bg: #f6f7f9; --card: #fff; --text: #1d2330; --muted: #5d6676; --accent: #0b6bcb; --line: #e2e5ea; }
+    :root {
+      --paper: #fbfbf8;
+      --ink: #1b1d1c;
+      --soft: #5f6461;
+      --rule: #d9dbd6;
+      --accent: #1f5a4c;
+      --font: "Literata", Georgia, serif;
+    }
     @media (prefers-color-scheme: dark) {
-      :root { --bg: #11151c; --card: #1a202a; --text: #e8ebf0; --muted: #9aa3b2; --accent: #5aa9ff; --line: #2a313d; }
+      :root { --paper: #181a19; --ink: #e9ebe7; --soft: #a2a8a4; --rule: #333734; --accent: #7cc3ae; }
     }
     * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 system-ui, sans-serif; }
-    main { max-width: 760px; margin: 0 auto; padding: 48px 16px; }
-    header { text-align: center; margin-bottom: 32px; }
-    .avatar { width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto 16px;
-              background: var(--accent); color: #fff; font-size: 36px; font-weight: 700; }
-    h1 { margin: 0; font-size: 2rem; }
-    .sub { color: var(--muted); margin: 4px 0 0; }
-    section { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; }
-    h2 { margin: 0 0 8px; font-size: 1.15rem; }
-    ul { margin: 0; padding-left: 20px; }
-    .tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-    .tags li { border: 1px solid var(--line); border-radius: 999px; padding: 2px 12px; }
-    a { color: var(--accent); }
-    footer { text-align: center; color: var(--muted); font-size: .9rem; margin-top: 32px; }
+    html, body { overflow-x: clip; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.65 var(--font); }
+    main { max-width: 46rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
+
+    header { margin-bottom: 3rem; }
+    h1 { margin: 0; font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 600; line-height: 1.15; overflow-wrap: break-word; }
+    .role { margin: .5rem 0 0; color: var(--soft); }
+
+    /* Filas de currículum: título de sección a la izquierda, contenido a la derecha */
+    section { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 0 2rem; padding: 1.5rem 0; border-top: 1px solid var(--rule); }
+    h2 { margin: 0; font-size: 1rem; font-weight: 600; color: var(--accent); }
+    section p, section ul { margin: 0; }
+    ul { list-style: none; padding: 0; }
+    li + li { margin-top: 1rem; }
+    .what { font-weight: 600; }
+    .where { color: var(--soft); }
+
+    a { color: var(--accent); text-underline-offset: .2em; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    @media (max-width: 34rem) {
+      section { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+    }
   </style>
 </head>
 <body>
   <main>
     <header>
-      <div class="avatar" aria-hidden="true">FP</div>
       <h1>Fernando Junior Paulino Bido</h1>
-      <p class="sub">Estudiante de Ingeniería de Software · Cotuí, República Dominicana</p>
+      <p class="role">Estudiante de Ingeniería de Software en Cotuí, República Dominicana</p>
     </header>
 
     <section>
-      <h2>Sobre mí</h2>
-      <p>Soy de Cotuí y estudio Ingeniería de Software en la Universidad Tecnológica del Cibao Oriental (UTECO).
-        Me gusta entender cómo funcionan las cosas, desde el hardware de un teléfono hasta el código de un programa,
-        y estoy formándome para crear software útil y bien hecho.</p>
-    </section>
-
-    <section>
-      <h2>Formación</h2>
-      <ul>
-        <li><strong>Ingeniería de Software</strong> — UTECO (desde 2026). Matrícula 2025-0774.</li>
-      </ul>
+      <h2>Perfil</h2>
+      <p>Estudio Ingeniería de Software en UTECO y trabajo como digitador en la Dirección Regional de Educación 16.
+        Antes reparaba teléfonos en un taller. Programo en C#.</p>
     </section>
 
     <section>
       <h2>Experiencia</h2>
       <ul>
-        <li><strong>Digitador</strong> — Dirección Regional de Educación 16, Cotuí.</li>
-        <li><strong>Técnico</strong> — Taller de reparación de teléfonos.</li>
+        <li><div class="what">Digitador</div><div class="where">Dirección Regional de Educación 16, Cotuí</div></li>
+        <li><div class="what">Reparación de teléfonos</div><div class="where">Taller de reparación</div></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Formación</h2>
+      <ul>
+        <li><div class="what">Ingeniería de Software</div><div class="where">Universidad Tecnológica del Cibao Oriental (UTECO), matrícula 2025-0774</div></li>
       </ul>
     </section>
 
     <section>
       <h2>Habilidades</h2>
-      <ul class="tags">
-        <li>C#</li>
-        <li>Digitación y manejo de documentos</li>
-        <li>Reparación de teléfonos</li>
-      </ul>
+      <p>C#, digitación y manejo de documentos, diagnóstico y reparación de teléfonos.</p>
     </section>
 
     <section>
       <h2>Contacto</h2>
       <ul>
-        <li>Correo UTECO: <a href="mailto:2025-0774@uteco.edu.do">2025-0774@uteco.edu.do</a></li>
-        <li>Gmail: <a href="mailto:ferdan.paulino@gmail.com">ferdan.paulino@gmail.com</a></li>
-        <li>GitHub: <a href="https://github.com/firufa">github.com/firufa</a></li>
+        <li><a href="mailto:ferdan.paulino@gmail.com">ferdan.paulino@gmail.com</a><br>
+          <a href="https://github.com/firufa">github.com/firufa</a></li>
       </ul>
     </section>
-
-    <footer>© 2026 Fernando Paulino</footer>
   </main>
 </body>
 </html>
